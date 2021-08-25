@@ -13,6 +13,8 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.validation.Validator;
+import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
@@ -46,6 +48,18 @@ public class WebApplicationContextConfig implements WebMvcConfigurer {
         registry.addResourceHandler("/js/**").addResourceLocations("/resources/js/");
     }
 
+    @Override
+    public Validator getValidator() {
+        return WebMvcConfigurer.super.getValidator(); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Bean
+    public LocalValidatorFactoryBean validator() {
+        LocalValidatorFactoryBean v = new LocalValidatorFactoryBean();
+        v.setValidationMessageSource(messageSource());
+        return v;
+    }
+
     @Bean
     public InternalResourceViewResolver getInternalResourceViewResolver() {
         InternalResourceViewResolver resolver = new InternalResourceViewResolver();
@@ -65,17 +79,17 @@ public class WebApplicationContextConfig implements WebMvcConfigurer {
     }
 
     @Bean
-    public CommonsMultipartResolver multiCommonMutipartResolver() {
+    public CommonsMultipartResolver mutipartResolver() {
         CommonsMultipartResolver resolver = new CommonsMultipartResolver();
         resolver.setDefaultEncoding("UTF-8");
 
         return resolver;
     }
-    
+
     @Bean
-    public Cloudinary cloudinary(){
+    public Cloudinary cloudinary() {
         Cloudinary c = new Cloudinary(ObjectUtils.asMap(
-               "cloud_name", "dgct8zpvp",
+                "cloud_name", "dgct8zpvp",
                 "api_key", "631943736442228",
                 "api_serect", "4xKADk_UWqAKS7vlOl8qst_LUjw",
                 "secure", true

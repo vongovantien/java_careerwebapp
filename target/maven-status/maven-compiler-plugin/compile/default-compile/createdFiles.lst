@@ -11,6 +11,7 @@ com\vnvt\repository\CommentRepository.class
 com\vnvt\repository\impl\EmployerRepositoryImpl.class
 com\vnvt\repository\EmployerRepository.class
 com\vnvt\service\TagService.class
+.netbeans_automatic_build
 com\vnvt\service\CommentService.class
 com\vnvt\service\impl\EmployerServiceImpl.class
 com\vnvt\repository\impl\CommentRepositoryImpl.class

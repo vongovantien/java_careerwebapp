@@ -21,6 +21,10 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.Transient;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import org.springframework.web.multipart.MultipartFile;
 
 /**
@@ -34,9 +38,15 @@ public class Post implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @Size(min = 10, max = 100, message = "{post.name.lenNameErr}")
     private String name;
+    @Size(min = 50, message = "{post.content.lenContentErr}")
     private String content;
+    @Min(value = 1000000, message = "{post.salary.minErr}")
+    @Max(value = 500000000, message = "{post.salary.maxErr}")
     private BigDecimal salary;
+    private String image;
+//    @NotNull(message = "{post.category.nullErr}")
     @ManyToOne
     @JoinColumn(name = "category_id")
     private Category category;
@@ -182,6 +192,20 @@ public class Post implements Serializable {
      */
     public void setFile(MultipartFile file) {
         this.file = file;
+    }
+
+    /**
+     * @return the image
+     */
+    public String getImage() {
+        return image;
+    }
+
+    /**
+     * @param image the image to set
+     */
+    public void setImage(String image) {
+        this.image = image;
     }
 
 }

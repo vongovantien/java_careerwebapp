@@ -5,48 +5,46 @@
  */
 package com.vnvt.pojos;
 
+import java.io.Serializable;
+import java.util.Date;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Transient;
+import lombok.Getter;
+import lombok.Setter;
+
 /**
  *
  * @author vongovantien
  */
-public class User {
 
+@Setter
+@Getter
+@Entity
+@Table(name = "user")
+public class User implements Serializable{
+
+    public static final String ADMIN = "ROLE_ADMIN";
+    public static final String USER = "ROLE_USER";
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+    @Column(name = "first_name")
     private String firstName;
+    @Column(name = "last_name")
     private String lastName;
-
-    public User() {
-    }
-
-    public User(String firstName, String lastName) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-    }
-
-    /**
-     * @return the firstName
-     */
-    public String getFirstName() {
-        return firstName;
-    }
-
-    /**
-     * @param firstName the firstName to set
-     */
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    /**
-     * @return the lastName
-     */
-    public String getLastName() {
-        return lastName;
-    }
-
-    /**
-     * @param lastName the lastName to set
-     */
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
+    private String email;
+    private String phone;
+    private String username;
+    private String password;
+    private boolean active;
+    private Date createdDate;
+    @Column(name = "user_role")
+    private String userRole;
+    @Transient
+    private String confirmPassword;
 }

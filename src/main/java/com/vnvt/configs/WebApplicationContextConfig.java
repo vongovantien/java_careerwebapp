@@ -5,8 +5,10 @@
  */
 package com.vnvt.configs;
 
-import com.cloudinary.Cloudinary;
-import com.cloudinary.utils.ObjectUtils;
+import com.vnvt.validator.PostNameValidator;
+import com.vnvt.validator.WebAppValidator;
+import java.util.HashSet;
+import java.util.Set;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -33,7 +35,8 @@ import org.springframework.web.servlet.view.JstlView;
 @ComponentScan(basePackages = {
     "com.vnvt.controllers",
     "com.vnvt.repository",
-    "com.vnvt.service",})
+    "com.vnvt.service",
+    "com.vnvt.validator"})
 public class WebApplicationContextConfig implements WebMvcConfigurer {
 
     @Override
@@ -50,7 +53,19 @@ public class WebApplicationContextConfig implements WebMvcConfigurer {
 
     @Override
     public Validator getValidator() {
-        return WebMvcConfigurer.super.getValidator(); //To change body of generated methods, choose Tools | Templates.
+        return validator();
+    }
+
+    @Bean
+    public WebAppValidator postValidator() {
+
+        Set<Validator> springValidators = new HashSet<>();
+        springValidators.add(new PostNameValidator());
+
+        WebAppValidator v = new WebAppValidator();
+        v.setSpringValidators(springValidators);
+
+        return v;
     }
 
     @Bean
@@ -84,16 +99,5 @@ public class WebApplicationContextConfig implements WebMvcConfigurer {
         resolver.setDefaultEncoding("UTF-8");
 
         return resolver;
-    }
-
-    @Bean
-    public Cloudinary cloudinary() {
-        Cloudinary c = new Cloudinary(ObjectUtils.asMap(
-                "cloud_name", "dgct8zpvp",
-                "api_key", "631943736442228",
-                "api_serect", "4xKADk_UWqAKS7vlOl8qst_LUjw",
-                "secure", true
-        ));
-        return c;
     }
 }

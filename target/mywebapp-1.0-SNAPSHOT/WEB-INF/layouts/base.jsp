@@ -14,26 +14,37 @@
         <title>
             <tiles:insertAttribute name="title"/>
         </title>
-        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
-        <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
-        <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
-        <link href="<c:url value="/css/main.css"/>" rel="stylesheet" />
-        <link href="<c:url value="/css/common.css"/>" rel="stylesheet" />
-        <link href="<c:url value="/css/plugins.css"/>" rel="stylesheet" />
+
+        <link rel="stylesheet" href="<c:url value="/css/bootstrap.min.css"/>"/>
+        <link rel="stylesheet" href="<c:url value="/css/line-icons.css"/>"/>
+        <link rel="stylesheet" href="<c:url value="/css/owl.carousel.min.css"/>"/>
+        <link rel="stylesheet" href="<c:url value="/css/owl.theme.default.css"/>"/>
+        <link rel="stylesheet" href="<c:url value="/css/slicknav.min.css"/>"/>
+        <link rel="stylesheet" href="<c:url value="/css/animate.css"/>"/>
+        <link rel="stylesheet" href="<c:url value="/css/main.css"/>"/>
+        <link rel="stylesheet" href="<c:url value="/css/responsive.css"/>"/>
+
     </head>
     <body>
         <tiles:insertAttribute name="header"/>
         <tiles:insertAttribute name="content"/>
         <tiles:insertAttribute name="footer"/>
-        <script src="<c:url value="/js/bootsnav.js"/>"></script>
-        <script src="<c:url value="/js/bootstrap.min.js"/>"></script>
-        <script src="<c:url value="/js/jquery.min.js"/>"></script>
-        <script src="<c:url value="/js/main.js"/>"></script>
+
+        <script src="<c:url value="/js/jquery-min.js"/>"></script>
+        <script src="<c:url value="/js/popper.min.js"/>"></script>
+
         <script src="<c:url value="/js/owl.carousel.min.js"/>"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+        <script src="<c:url value="/js/jquery.slicknav.js"/>"></script>
+        <script src="<c:url value="/js/jquery.counterup.min.js"/>"></script>
+        <script src="<c:url value="/js/waypoints.min.js"/>"></script>
+        <script src="<c:url value="/js/form-validator.min.js"/>"></script>
+        <script src="<c:url value="/js/contact-form-script.js"/>"></script>
+        <script src="<c:url value="/js/main.js"/>"></script>
+        <link href="https://cdn.lineicons.com/3.0/lineicons.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <script src="https://www.paypal.com/sdk/js?client-id=test"></script>
+
     </body>
 </html>

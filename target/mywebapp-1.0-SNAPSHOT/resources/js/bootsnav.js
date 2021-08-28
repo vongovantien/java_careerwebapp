@@ -574,5 +574,5 @@
         $(".navbar-collapse").removeClass("bounceIn");      
     });
     
-}(jQuery));
+});
 

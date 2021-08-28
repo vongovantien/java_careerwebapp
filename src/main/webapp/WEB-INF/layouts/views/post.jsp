@@ -26,7 +26,7 @@
         </div>
         <div class="form-group">
             <label for="salary">Mức lương đề xuẩt</label>
-            <form:textarea id="salary" path="salary" cssClass="form-control"/>
+            <form:input id="salary" path="salary" cssClass="form-control"/>
             <form:errors path="salary" cssClass="alert alert-danger" element="div"/>
         </div>
         <div class="form-group">

@@ -7,62 +7,83 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<!-- footer start -->
 <footer>
-    <div class="container">
-        <div class="col-md-3 col-sm-6">
-            <h4>Featured Job</h4>
-            <ul>
-                <li><a href="#">Browse Jobs</a></li>
-                <li><a href="#">Premium MBA Jobs</a></li>
-                <li><a href="#">Access Database</a></li>
-                <li><a href="#">Manage Responses</a></li>
-                <li><a href="#">Report a Problem</a></li>
-                <li><a href="#">Mobile Site</a></li>
-                <li><a href="#">Jobs by Skill</a></li>
-            </ul>
+    <section class="footer-Content">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-xs-12">
+                    <div class="widget">
+                        <div class="footer-logo"><img src="assets/img/logo-footer.png" alt=""></div>
+                        <div class="textwidget">
+                            <p>Sed consequat sapien faus quam bibendum convallis quis in nulla. Pellentesque volutpat odio eget diam cursus semper.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-4 col-xs-12">
+                    <div class="widget">
+                        <h3 class="block-title">Quick Links</h3>
+                        <ul class="menu">
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Support</a></li>
+                            <li><a href="#">License</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                        <ul class="menu">
+                            <li><a href="#">Terms & Conditions</a></li>
+                            <li><a href="#">Privacy</a></li>
+                            <li><a href="#">Refferal Terms</a></li>
+                            <li><a href="#">Product License</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-xs-12">
+                    <div class="widget">
+                        <h3 class="block-title">Subscribe Now</h3>
+                        <p>Sed consequat sapien faus quam bibendum convallis.</p> 
+                        <form method="post" id="subscribe-form" name="subscribe-form" class="validate">
+                            <div class="form-group is-empty">
+                                <input type="email" value="" name="Email" class="form-control" id="EMAIL" placeholder="Enter Email..." required="">
+                                <button type="submit" name="subscribe" id="subscribes" class="btn btn-common sub-btn"><i class="lni-envelope"></i></button>
+                                <div class="clearfix"></div>
+                            </div>
+                        </form>
+                        <ul class="mt-3 footer-social">
+                            <li><a class="facebook" href="#"><i class="lni lni-facebook"></i></a></li>
+                            <li><a class="twitter" href="#"><i class="lni lni-twitter"></i></a></li>
+                            <li><a class="linkedin" href="#"><i class="lni lni-linkedin"></i></a></li>
+                            <li><a class="google-plus" href="#"><i class="lni lni-google"></i></a></li>
+                        </ul>        
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
+    <!-- Footer area End -->
 
-        <div class="col-md-3 col-sm-6">
-            <h4>Latest Job</h4>
-            <ul>
-                <li><a href="#">Browse Jobs</a></li>
-                <li><a href="#">Premium MBA Jobs</a></li>
-                <li><a href="#">Access Database</a></li>
-                <li><a href="#">Manage Responses</a></li>
-                <li><a href="#">Report a Problem</a></li>
-                <li><a href="#">Mobile Site</a></li>
-                <li><a href="#">Jobs by Skill</a></li>
-            </ul>
+    <!-- Copyright Start  -->
+    <div id="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="site-info text-center">
+                        <p>Designed and Developed by <a href="#" rel="nofollow">&copy;Copyright 2021 Võ Ngô Văn Tiền | Design By</a></p>
+                    </div>     
+                </div>
+            </div>
         </div>
-
-        <div class="col-md-3 col-sm-6">
-            <h4>Reach Us</h4>
-            <address>
-                <ul>
-                    <li>1201, Murakeu Market, QUCH07<br>
-                        United Kingdon</li>
-                    <li>Email: Support@job.com</li>
-                    <li>Call: 044 123 458 65879</li>
-                    <li>Skype: job@skype</li>
-                    <li>FAX: 123 456 85</li>
-                </ul>
-            </address>
-        </div>
-
-        <div class="col-md-3 col-sm-6">
-            <h4>Drop A Mail</h4>
-            <form>
-                <input type="text" class="form-control input-lg" placeholder="Your Name">
-                <input type="text" class="form-control input-lg" placeholder="Email...">
-                <textarea class="form-control" placeholder="Message"></textarea>
-                <button type="submit" class="btn btn-primary">Login</button>
-            </form>
-        </div>
-
-
     </div>
-    <div class="copy-right">
-        <p>&copy;Copyright 2021 Võ Ngô Văn Tiền | Design By</p>
-    </div>
+</footer>
+
+
+<a href="#" class="back-to-top">
+    <i class="lni-arrow-up"></i>
+</a> 
+
+
+<div id="preloader">
+    <div class="loader" id="loader-1"></div>
+</div>
+
+
+</div>
 </footer>

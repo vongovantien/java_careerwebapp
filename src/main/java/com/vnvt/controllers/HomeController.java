@@ -8,9 +8,12 @@ package com.vnvt.controllers;
 import com.vnvt.pojos.User;
 import com.vnvt.service.CategoryService;
 import com.vnvt.service.PostService;
+import java.util.LinkedHashMap;
+import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -38,10 +41,35 @@ public class HomeController {
         return "index";
     }
 
-    @RequestMapping("/post")
-    public String post(Model model) {
+    @RequestMapping("/about")
+    public String about(Model model) {
 
-        return "index";
+        return "about";
+    }
+    
+    @RequestMapping("/donate")
+    public String donate(Model model) {
+
+        return "donate";
+    }
+    
+    @RequestMapping("/contact")
+    public String contact(Model model) {
+
+        return "contact";
+    }
+    
+    @GetMapping("/admin/reports")
+    public String showDashboard(Model model) {
+        Map<String, Integer> data = new LinkedHashMap<String, Integer>();
+        data.put("JAVA", 50);
+        data.put("Ruby", 20);
+        data.put("Python", 30);
+        data.put("Py", 30);
+        data.put("C#", 30);
+
+        model.addAttribute("data", data);
+        return "reports";
     }
 
     @RequestMapping("hello/{name}")
@@ -50,13 +78,7 @@ public class HomeController {
         model.addAttribute("message", "Welcome" + name + "!!!!!!!!!");
         return "hello";
     }
-
-    @RequestMapping(path = "/hello-post", method = RequestMethod.POST)
-    public String show(Model model, @ModelAttribute(value = "user") User user) {
-        model.addAttribute("fullName", user.getFirstName() + user.getLastName());
-
-        return "index";
-    }
+    
 
     @RequestMapping(path = "/test")
     public String testRedirect(Model model) {

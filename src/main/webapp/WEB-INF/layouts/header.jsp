@@ -7,35 +7,73 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<!-- Navigation Start  -->
-<nav class="navbar navbar-default navbar-sticky bootsnav">
+<style>
+    .hero-area {
+        background: url(<c:url value="/images/bg/bg-intro.png"/>) center center no-repeat;
+        background-size: cover;
+        overflow: hidden;
+        color: #fff;
+        position: relative;
+        width: 100%;
+    }
+</style>
+<header id="home" class="hero-area">
+    <nav class="navbar navbar-expand-lg fixed-top scrolling-navbar">
+        <div class="container">
+            <div class="theme-header clearfix">
+                <div class="navbar-header">
+                    <a href="#" class="navbar-brand"><img src="<c:url value="/images/logo-mobile.png"/>" alt="logo"></a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-navbar">
+                    <ul class="navbar-nav mr-auto w-100 justify-content-end">
+                        <li class="nav-item">
+                            <a class="nav-link" href="<c:url value="/"/>">
+                                Home
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<c:url value="/donate"/>">
+                                Donate
+                            </a>
+                        </li>
 
-    <div class="container">      
-        <!-- Start Header Navigation -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
-                <i class="fa fa-bars"></i>
-            </button>
-            <a class="navbar-brand" href="index.html"><img src="<c:url value="imgages/logo.png"/>" class="logo" alt=""></a>
-        </div>
-        <!-- End Header Navigation -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="<c:url value="/contact"/>">
+                                Contact
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<c:url value="/about"/>">
+                                About
+                            </a>
+                        </li>
+                        <c:if test="${pageContext.request.userPrincipal.name == null}">
+                            <li class="nav-item">
+                                <a class="nav-link" href="<c:url value="/login"/>">
+                                    Sign In
+                                </a>
+                            </li>
+                        </c:if>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<c:url value="/register"/>">
+                                Register
+                            </a>
+                        </li>
+                        <li class="button-group">
+                            <a href="#" class="button btn btn-common">Post a Job</a>
+                        </li>
+                        <c:if test="${pageContext.request.userPrincipal.name != null}">
+                            <li class="nav-item">
+                                <a class="nav-link" href="<c:url value="/account"/>">
+                                    ${pageContext.request.userPrincipal.name}
+                                </a>
+                            </li>
+                        </c:if>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="navbar-menu">
-            <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="login.html">Login</a></li>
-                <li><a href="companies.html">Companies</a></li> 
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Browse</a>
-                    <ul class="dropdown-menu animated fadeOutUp" style="display: none; opacity: 1;">
-                        <li class="active"><a href="browse-job.html">Browse Jobs</a></li>
-                        <li><a href="company-detail.html">Job Detail</a></li>
-                        <li><a href="resume.html">Resume Detail</a></li>
                     </ul>
-                </li>
-            </ul>
+                </div>
+            </div>
         </div>
-    </div>   
-</nav>
-<!-- Navigation End  -->
+        <div class="mobile-menu" data-logo="<c:url value="/images/logo-mobile.png"/>"></div>
+    </nav>         
+</header>

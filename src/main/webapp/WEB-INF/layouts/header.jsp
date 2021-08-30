@@ -5,7 +5,8 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
 <style>
     .hero-area {
@@ -33,7 +34,7 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="<c:url value="/donate"/>">
-                                Donate
+                               Donate
                             </a>
                         </li>
 
@@ -50,18 +51,19 @@
                         <c:if test="${pageContext.request.userPrincipal.name == null}">
                             <li class="nav-item">
                                 <a class="nav-link" href="<c:url value="/login"/>">
-                                    Sign In
+                                    Sign in
                                 </a>
                             </li>
                         </c:if>
                         <li class="nav-item">
                             <a class="nav-link" href="<c:url value="/register"/>">
-                                Register
+                                <spring:message code="label.register"/>
                             </a>
                         </li>
                         <li class="button-group">
-                            <a href="#" class="button btn btn-common">Post a Job</a>
+                            <a href="#" class="button btn btn-common"><spring:message code="label.postAJob"/></a>
                         </li>
+                        <p><a href="?language=en_US">English</a>|<a href="?language=vi_VI">Vietnamese</a></p>
                         <c:if test="${pageContext.request.userPrincipal.name != null}">
                             <li class="nav-item">
                                 <a class="nav-link" href="<c:url value="/account"/>">

@@ -7,6 +7,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles" %>
+<%@taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
 <div class="container-fluid">
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -54,7 +55,7 @@
                                     <div class="search-category-container">
                                         <label class="styled-select">
                                             <select>
-                                                <option value="none">Locations</option>
+                                                <option value="none"><spring:message code="label.location"/></option>
                                                 <option value="none">New York</option>
                                                 <option value="none">California</option>
                                                 <option value="none">Washington</option>
